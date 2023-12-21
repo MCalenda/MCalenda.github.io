@@ -1,7 +1,8 @@
 /* Timeline custom component */
 .timeline-card {
   position: relative;
-  margin-left: 16px; }
+  margin-left: 16px;
+}
 
 .timeline-card:before {
   content: '';
@@ -14,124 +15,233 @@
   top: 16px;
   left: -12px;
   border: 5px solid;
-  z-index: 2; }
+  z-index: 2;
+}
 
 .timeline-body {
-  border-left: 2px solid #E6E9ED; }
+  border-left: 2px solid #E6E9ED;
+}
 
 .timeline-card-primary:before {
-  border-color: var(--bs-primary); }
+  border-color: var(--bs-primary);
+}
 
 .timeline-card-info:before {
-  border-color: var(--bs-info); }
+  border-color: var(--bs-info);
+}
 
 .timeline-card-secondary:before {
-  border-color: var(--bs-secondary); }
+  border-color: var(--bs-secondary);
+}
 
 .timeline-card-success:before {
-  border-color: var(--bs-teal); }
+  border-color: var(--bs-teal);
+}
 
 html {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+}
 
-html, body {
-  overflow-x: hidden; }
+html,
+body {
+  overflow-x: hidden;
+}
 
 .container {
-  max-width: 1140px; }
+  max-width: 1140px;
+}
 
 .site-title {
   font-size: 1.25rem;
-  line-height: 2.5rem; }
+  line-height: 2.5rem;
+}
 
 .nav-link {
   padding: 0;
   font-size: 1rem;
   line-height: 2.5rem;
   color: inherit;
-  opacity: 0.8; }
+  opacity: 0.8;
+}
 
 .header-social .nav-link {
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+}
 
 .nav-link:hover,
 .nav-link:focus {
   color: inherit;
-  opacity: 1; }
+  opacity: 1;
+}
 
-.nav-item + .nav-item {
-  margin-left: 1rem; }
+.nav-item+.nav-item {
+  margin-left: 1rem;
+}
 
 .cover {
-  height: 500px; }
+  height: 500px;
+}
 
-.cover > img {
+.cover>img {
   -o-object-fit: cover;
-     object-fit: cover;
-  width: auto; }
+  object-fit: cover;
+  width: auto;
+}
 
 .progress-bar {
   text-transform: uppercase;
   font-size: 10px;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+}
 
 .text-small {
-  font-size: 0.85rem; }
+  font-size: 0.85rem;
+}
 
 .text-teal {
-  color: var(--bs-teal); }
+  color: var(--bs-teal);
+}
 
 footer a:not(.nav-link) {
   color: inherit;
   border-bottom: 1px dashed;
   text-decoration: none;
-  cursor: pointer; }
+  cursor: pointer;
+}
+
+.custom-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 27, 35, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.image-container:hover img {
+  transform: scale(1.25);
+}
+
+
+.overlay-text {
+  color: white;
+  font-size: 24px; /* Cambia la dimensione del testo come desiderato */
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Ombra */
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s all ease-in-out;
+}
 
 
 @media (max-width: 767px) {
+
   /* disable animations on mobile */
   [data-aos] {
     opacity: 1 !important;
-    transform: translate(0) scale(1) !important; }
+    transform: translate(0) scale(1) !important;
+  }
+
   .p-5 {
-    padding: 2.5rem 2rem !important; }
+    padding: 2.5rem 2rem !important;
+  }
+
   .portfolio-section .m-5 {
-    margin: 2rem 0 1rem !important; }
+    margin: 2rem 0 1rem !important;
+  }
+
   .portfolio-reverse {
-    flex-direction: column-reverse; }
+    flex-direction: column-reverse;
+  }
+
   .portfolio-reverse .text-end {
-    text-align: start !important; } }
+    text-align: start !important;
+  }
+
+  .custom-list{
+    display: default;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 @media print {
   [data-aos] {
     opacity: 1 !important;
-    transform: translate(0) scale(1) !important; }
+    transform: translate(0) scale(1) !important;
+  }
+
   body.bg-light {
-    background-color: #fff !important; }
+    background-color: #fff !important;
+  }
+
   .container {
     width: auto;
     max-width: 100%;
-    padding: 0; }
+    padding: 0;
+  }
+
   .cover {
     height: 360px;
-    margin-bottom: 1.5rem; }
-  .cover > img {
-    display: none; }
+    margin-bottom: 1.5rem;
+  }
+
+  .cover>img {
+    display: none;
+  }
+
   .shadow-1-strong {
-    box-shadow: none !important; }
-  .resume-container > .my-5 {
-    margin: 0 !important; }
+    box-shadow: none !important;
+  }
+
+  .resume-container>.my-5 {
+    margin: 0 !important;
+  }
+
   .my-5.p-5 {
-    padding: 1.5rem 0 !important; }
+    padding: 1.5rem 0 !important;
+  }
+
   .about-section {
-    padding: 0 !important; }
+    padding: 0 !important;
+  }
+
   .skills-section,
   .work-experience-section,
   .education-section,
   .portfolio-section,
   .reference-section,
   .contact-section {
-    padding: 0 !important; }
+    padding: 0 !important;
+  }
+
   .page-break {
     padding-top: 5rem;
-    page-break-before: always; } }
+    page-break-before: always;
+  }
+}
+
